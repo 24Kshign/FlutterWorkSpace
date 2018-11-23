@@ -4,8 +4,8 @@ class FlutterToast {
   static const MethodChannel _channel = const MethodChannel('flutter_toast');
 
 
-  static void showShortToast(String messsage) =>
-      _channel.invokeMethod("showShortToast", {"message": messsage});
+  static void showShortToast(String message) =>
+      _channel.invokeMethod("showShortToast", {"message": message});
 
   static void showLongToast(String message) =>
       _channel.invokeMethod("showLongToast", {"message": message});
