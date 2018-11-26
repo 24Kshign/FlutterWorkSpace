@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_element/text_element.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,21 +26,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-
-          ],
+        appBar: AppBar(
+          title: Text(widget.title),
         ),
-      )
-    );
+        body: Align(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              new RaisedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => TextElement()));
+                },
+                child: Text('Text组件详解'),
+              )
+            ],
+          ),
+        ));
   }
 }
