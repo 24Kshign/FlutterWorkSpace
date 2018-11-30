@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_element/image_element.dart';
 import 'package:flutter_element/text_element.dart';
 
 void main() => runApp(MyApp());
@@ -42,7 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => TextElement()));
                 },
                 child: Text('Text组件详解'),
-              )
+              ),
+              new RaisedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ImageElement()));
+                },
+                child: Text('Image组件详解'),
+              ),
             ],
           ),
         ));
