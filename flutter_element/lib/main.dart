@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_element/edit_text_element.dart';
 import 'package:flutter_element/image_element.dart';
+import 'package:flutter_element/row_column.dart';
 import 'package:flutter_element/text_element.dart';
 
 void main() => runApp(MyApp());
@@ -60,6 +61,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) => EditTextElement()));
                 },
                 child: Text('TextFiled组件详解'),
+              ),
+              new RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => RowAndColumn()));
+                },
+                child: Text('Row/Column布局详解'),
               ),
             ],
           ),

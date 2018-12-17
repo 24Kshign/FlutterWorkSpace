@@ -140,7 +140,10 @@ class _ImageViewWidget extends State<ImageViewWidget> {
                   height: 60,
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(5),
+                      bottomLeft: Radius.circular(5),
+                    ),
                     image: DecorationImage(
                         image: NetworkImage(imageUrl),
 //                        image: AssetImage('images/icon_main_bg.png'),
