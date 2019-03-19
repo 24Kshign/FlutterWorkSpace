@@ -49,27 +49,26 @@ class _LoginWidget extends State<LoginWidget> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           new Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 60.0, 0.0, 8.0),
-              child: new Image(
-                image: new AssetImage('images/logo.png'),
-                width: 43.0,
-                height: 43.0,
-              )),
+            padding: const EdgeInsets.fromLTRB(0.0, 130.0, 0.0, 8.0),
+            child: new Image(
+              image: new AssetImage('images/logo.png'),
+              width: 43.0,
+              height: 43.0,
+            ),
+          ),
           new Text('Test'),
           new InputWidget(hint: '请输入账号', phoneController: phoneController),
           new InputWidget(hint: '请输入密码', passController: passController),
           new Padding(
             padding: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 0.0),
-            child: Align(
-              child: SizedBox(
-                height: 45.0,
-                width: 270.0,
-                child: RaisedButton(
-                  onPressed: () => _login(context),
-                  color: Colors.blue,
-                  child: Text('登录',
-                      style: new TextStyle(fontSize: 16, color: Colors.white)),
-                ),
+            child: SizedBox(
+              height: 45.0,
+              width: 270.0,
+              child: RaisedButton(
+                onPressed: () => _login(context),
+                color: Colors.blue,
+                child: Text('登录',
+                    style: new TextStyle(fontSize: 16, color: Colors.white)),
               ),
             ),
           ),

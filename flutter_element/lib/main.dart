@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_element/animator_element.dart';
 import 'package:flutter_element/edit_text_element.dart';
 import 'package:flutter_element/image_element.dart';
+import 'package:flutter_element/login_page.dart';
 import 'package:flutter_element/row_column.dart';
 import 'package:flutter_element/text_element.dart';
+import 'package:flutter_element/toast_manager.dart';
+import 'package:flutter_element/video_element.dart';
+import 'package:flutter_element/view_pager.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,6 +34,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  void _showBottomDialog(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (builder) {
+          return new Container(
+            color: Colors.black,
+            height: 350.0,
+            //so you don't have to change MaterialApp canvasColor
+            child: new Container(
+                child: new Center(
+              child: new Text("This is a modal sheet"),
+            )),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,8 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               new RaisedButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TextElement()));
+//                  Navigator.push(context,
+//                      MaterialPageRoute(builder: (context) => TextElement()));
+                  _showBottomDialog(context);
                 },
                 child: Text('Text组件详解'),
               ),
@@ -64,12 +86,42 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               new RaisedButton(
                 onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => RowAndColumn()));
+                },
+                child: Text('Row/Column布局详解'),
+              ),
+              new RaisedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => VideoElement()));
+                },
+                child: Text('视频播放'),
+              ),
+              new RaisedButton(
+                onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => RowAndColumn()));
+                          builder: (context) => ViewPagerElement()));
                 },
-                child: Text('Row/Column布局详解'),
+                child: Text('ViewPager'),
+              ),
+              new RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AnimatorElement()));
+                },
+                child: Text('动画'),
+              ),
+              new RaisedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
+                child: Text('登录动画'),
               ),
             ],
           ),
